@@ -4,6 +4,11 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.(graphql|gql)$/,
+        exclude: /node_modules/,
+        loader: "graphql-tag/loader"
+      },
+      {
         exclude: [path.resolve(__dirname, "node_modules")],
         test: /\.ts$/,
         use: "ts-loader"
@@ -11,11 +16,13 @@ module.exports = {
     ]
   },
   output: {
-    filename: "server.js",
-    path: path.resolve(__dirname, "dist")
+    filename: "[name].bundle.js",
+    libraryTarget: "commonjs",
+    path: path.resolve(__dirname, "dist"),
+    chunkFilename: "static/js/[name].chunk.js"
   },
   resolve: {
-    extensions: [".ts", ".js"]
+    extensions: [".graphql", ".ts", ".js"]
   },
   target: "node"
 };

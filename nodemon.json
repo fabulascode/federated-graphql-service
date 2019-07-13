@@ -1,0 +1,4 @@
+{
+  "ignore": ["*.ts"],
+  "verbose": false
+}
