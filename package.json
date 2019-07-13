@@ -6,12 +6,13 @@
   "scripts": {
     "build": "webpack --mode production --config webpack.production.js",
     "start": "nodemon dist/main.bundle.js",
-    "start-gateway": "nodemon dist/gateway.bundle.js",
-    "develop": "concurrently npm:develop-*",
-    "develop-build": "webpack --config webpack.development.js",
-    "develop-start-main": "nodemon dist/main.bundle.js",
-    "develop-start-secondary": "nodemon dist/secondary.bundle.js",
-    "develop-start-gateway": "sleep 3 && nodemon --delay 1000ms dist/gateway.bundle.js"
+    "start-gateway": "nodemon dist/gate.bundle.js",
+    "develop": "concurrently npm:ds-*",
+    "ds-build": "webpack --config webpack.development.js",
+    "ds-main": "nodemon dist/main.bundle.js",
+    "ds-secd": "nodemon dist/secd.bundle.js",
+    "ds-auth": "nodemon dist/auth.bundle.js",
+    "ds-gate": "sleep 3 && nodemon --delay 1000ms dist/gate.bundle.js"
   },
   "keywords": [],
   "author": "",

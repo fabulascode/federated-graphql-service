@@ -3,7 +3,7 @@ import { buildFederatedSchema } from "@apollo/federation";
 import { environment } from "./env";
 
 import resolvers from "./resolvers";
-import typeDefs from "./schema/main.graphql";
+import typeDefs from "./schema/auth.graphql";
 
 const server = new ApolloServer({
   schema: buildFederatedSchema([{ resolvers, typeDefs }]),
@@ -15,7 +15,7 @@ const server = new ApolloServer({
 server
   .listen(environment.port)
   .then(({ url }) =>
-    console.log(`\n🚀🚀🚀  Main Service ready at ${url} 🚀🚀🚀\n`)
+    console.log(`\n🚀🚀🚀  Auth Service ready at ${url} 🚀🚀🚀\n`)
   );
 
 if (module.hot) {

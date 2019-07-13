@@ -14,7 +14,9 @@ const server = new ApolloServer({
 
 server
   .listen(environment.port)
-  .then(({ url }) => console.log(`\n🚀🚀🚀  Server ready at ${url} 🚀🚀🚀\n`));
+  .then(({ url }) =>
+    console.log(`\n🚀🚀🚀  Secondary Service ready at ${url} 🚀🚀🚀\n`)
+  );
 
 if (module.hot) {
   module.hot.accept();

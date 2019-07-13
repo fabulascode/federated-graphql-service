@@ -5,6 +5,7 @@ import { ApolloGateway } from "@apollo/gateway";
 const gateway = new ApolloGateway({
   serviceList: [
     { name: "main", url: "http://localhost:4001/graphql" },
+    { name: "auth", url: "http://localhost:4003/graphql" },
     { name: "secondary", url: "http://localhost:4002/graphql" }
   ]
 });
@@ -15,6 +16,6 @@ const gateway = new ApolloGateway({
   const server = new ApolloServer({ schema, executor });
 
   server.listen().then(({ url }) => {
-    console.log(`\n🚀🚀🚀  Gateway Server ready at ${url} 🚀🚀🚀\n`);
+    console.log(`\n🚀🚀🚀  Gateway API ready at ${url} 🚀🚀🚀`);
   });
 })();
