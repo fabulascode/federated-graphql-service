@@ -12,7 +12,7 @@
     "ds-main": "nodemon dist/main.bundle.js",
     "ds-secd": "nodemon dist/secd.bundle.js",
     "ds-auth": "nodemon dist/auth.bundle.js",
-    "ds-gate": "sleep 3 && nodemon --delay 1000ms dist/gate.bundle.js"
+    "ds-gate": "sleep 5 && nodemon --delay 1000ms dist/gate.bundle.js"
   },
   "keywords": [],
   "author": "",
